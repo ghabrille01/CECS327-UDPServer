@@ -8,8 +8,11 @@ public class UDPServer {
 			aSocket = new DatagramSocket(6789);
 			byte[] buffer = new byte[1000];
 			while (true) {
+				System.out.println("Working 1");
 				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
+				System.out.println("Working 2");
 				aSocket.receive(request);
+				System.out.println("Working 3");
 				DatagramPacket reply = new DatagramPacket(request.getData(), request.getLength(), request.getAddress(),
 						request.getPort());
 				System.out.println("A Client has been visited...");
